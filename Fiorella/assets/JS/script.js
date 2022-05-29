@@ -48,19 +48,6 @@ shopdropdown.addEventListener("click", () => {
 }
 )
 
-// var product_types_dropdown = document.querySelector("#prdct-types-drpdwn");
-// var product_types_inner_dropdown = document.querySelector(".prdct-types-inner-drpdwn");
-// console.log(product_types_inner_dropdown);
-// product_types_dropdown.addEventListener("click", () => {
-//     if (product_types_inner_dropdown.style.position == "absolute") {
-//         product_types_inner_dropdown.style = "position:relative; visibility:visible;";
-//     }
-//     else {
-//         product_types_inner_dropdown.style = "position:absolute; visibility:hidden;";
-//     }
-// })
-
-
 //---------PORTFOLIO
 var portfoliodropdowncontent = document.querySelector("#portfolio-sdb-drpdwn-content");
 
@@ -221,34 +208,44 @@ for (var i = 0; i < btns.length; i++) {
 
 
 
-// function BasketItem(card_img, item_name,item_price) {
-//     this.Card_img=card_img;
-//     this.Item_name=item_name;
-//     this.Item_price=item_price;
-// }
+//Local storage Basket
 
+let buttons=document.getElementsByClassName('add-to-card');
+[...buttons].forEach(btn=>{
+    btn.onclick=function (e) {
+        let id=this.parentElement.parentElement.getAttribute("data-id");
+        let title=this.previousElementSibling.innerText;
+        let price=this.nextElementSibling.innerHTML;
+        let img=this.parentElement.previousElementSibling.firstElementChild.getAttribute("src");
+        
+        let obj={
+            id:id,
+            title:title,
+            price: price,
+            img:img,
+            count:1
+        }
+        addBasket(obj);
+    }
+})
 
-// let btn=document.getElementsByClassName('add-to-card');
-
-
-// let BasketStr=localStorage.getItem('basket');
-
-// if (!BasketStr) {
-//     let basketItems=[];
-// }
-// else{
-//    let  basketItems=JSON.parse(BasketStr);
-// }
-
-
-
-
-// btn.addEventListener("click",function (e) {
-//     e.preventDefault();
-//     let card_img=e.parentNode.parentNode.getElementsByClassName('card-image');
-
-//     let item=BasketItem.find(x=>x.)
-    
-// })
-
+function addBasket(obj) {
+    let basket=localStorage.getItem('basket');
+        if (basket==null) {
+            let basketArr=[obj];
+            localStorage.setItem('basket',JSON.stringify(basketArr));
+        }
+        else{
+            let basketArr=JSON.parse(basket);
+            let isExist=basketArr.find(ob=>ob.id==obj.id);
+            if(isExist===undefined){
+                basketArr.push(obj);
+            }
+            else{
+                isExist.count+=1;
+            }
+            localStorage.setItem('basket',JSON.stringify(basketArr));
+        }
+        
+}
 

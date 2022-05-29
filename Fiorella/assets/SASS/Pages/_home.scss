@@ -79,6 +79,7 @@ header {
             #interactive,
             #typography {
               &:hover {
+
                 .portfolio-innerdrpdwn-cnt,
                 .post-types-innerdrpdwn-cnt,
                 .classic-innerdrpdwn-cnt,
@@ -646,11 +647,7 @@ header {
         position: relative;
         max-width: 100%;
         display: block;
-        // width: 180% !important;
         height: 500px !important;
-        // right: 171px;
-        // zoom: 135%;
-        // bottom: 100px;
       }
     }
 
@@ -674,7 +671,7 @@ header {
   font-size: 12px;
   font-weight: 500;
   margin: 20px 0;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 
   #filter {
@@ -697,11 +694,13 @@ header {
           transition: 0.5s;
         }
       }
+
       .active {
         color: #f34f3f;
       }
     }
   }
+
   .card {
     display: none;
   }
@@ -763,6 +762,7 @@ header {
   gap: 35px;
   text-align: center;
   margin: 0 5px;
+  margin-bottom: 50px;
 
   .card {
     .card-image {
@@ -796,18 +796,19 @@ header {
       .read-more,
       .view-products,
       .buy-on-amazon {
+        background-color: transparent;
+        border: none;
         visibility: hidden;
         position: absolute;
-        transform: translate(50%);
+        left: 0;
+        color: #868675;
+        font-weight: 400;
 
-        a {
-          color: #868675;
-          font-weight: 400;
-        }
       }
     }
 
     &:hover {
+
       .add-to-card,
       .read-more {
         visibility: visible;
@@ -827,7 +828,7 @@ header {
       .buy-on-amazon {
         visibility: visible;
         transition: 0.3s;
-        transform: translate(90%);
+        transform: translate(70%);
         transition-timing-function: ease-in;
       }
     }
@@ -850,3 +851,103 @@ header {
   }
 }
 
+#surprise_your_valentine {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-evenly;
+  background-color: #F7F7F7;
+  padding: 100px;
+  gap: 20px;
+
+  #video {
+    position: relative;
+    overflow: hidden;
+    height: 356px;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+   
+    }
+    &:hover {
+      img {
+        transform: scale(1.05);
+        transition: 0.5s  ;
+      }
+  
+    }
+    #play_btn {
+      background-color: #FFFFFF;
+      height: 100px;
+      width: 100px;
+      border: none;
+      border-radius: 50%;
+      position: absolute;
+      left: 223px;
+      bottom: 127px;
+  
+      #red_triangle {
+        margin: 0 auto;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid #f34f3f;
+      }
+    }
+  
+  }
+
+  #surprise_your_valentine_summary{
+    max-width: 420px;
+
+    h3,span{
+      opacity: 0.9;
+      font-family:"Playfair Display";
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 1.2em;
+      letter-spacing: 0.5px;
+      color: #2b2b2b;
+    }
+    span{
+      opacity: 1;
+      color: #f34f3f;
+    }
+    p,ul li{
+      font-family: Lora;
+      color: rgb(109, 106, 106);
+      line-height: 30px;
+      font-size: 20px;
+      margin-top: 20px;
+
+    }
+
+    ul{
+      list-style: none;
+      li{
+        img{
+          margin-right: 15px;
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #surprise_your_valentine {
+    display: flex;
+    flex-direction: column;
+
+    #video{
+      height: 500px;
+      margin-bottom: 20px;
+
+    //   #play_btn {
+    //     left: 440px;
+    //     bottom: 200px;
+    // }
+  }
+}
+}

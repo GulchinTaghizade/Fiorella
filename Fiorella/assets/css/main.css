@@ -715,7 +715,7 @@ header .shop-h2-font {
   font-size: 12px;
   font-weight: 500;
   margin: 20px 0;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -812,6 +812,7 @@ header .shop-h2-font {
   gap: 35px;
   text-align: center;
   margin: 0 5px;
+  margin-bottom: 50px;
 }
 
 #product-cards .card .card-image {
@@ -848,16 +849,11 @@ header .shop-h2-font {
 #product-cards .card .card-summary .read-more,
 #product-cards .card .card-summary .view-products,
 #product-cards .card .card-summary .buy-on-amazon {
+  background-color: transparent;
+  border: none;
   visibility: hidden;
   position: absolute;
-  -webkit-transform: translate(50%);
-          transform: translate(50%);
-}
-
-#product-cards .card .card-summary .add-to-card a,
-#product-cards .card .card-summary .read-more a,
-#product-cards .card .card-summary .view-products a,
-#product-cards .card .card-summary .buy-on-amazon a {
+  left: 0;
   color: #868675;
   font-weight: 400;
 }
@@ -888,8 +884,8 @@ header .shop-h2-font {
   visibility: visible;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-transform: translate(90%);
-          transform: translate(90%);
+  -webkit-transform: translate(70%);
+          transform: translate(70%);
   -webkit-transition-timing-function: ease-in;
           transition-timing-function: ease-in;
 }
@@ -905,6 +901,109 @@ header .shop-h2-font {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+  }
+}
+
+#surprise_your_valentine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #F7F7F7;
+  padding: 100px;
+  gap: 20px;
+}
+
+#surprise_your_valentine #video {
+  position: relative;
+  overflow: hidden;
+  height: 356px;
+  cursor: pointer;
+}
+
+#surprise_your_valentine #video img {
+  width: 100%;
+  height: 100%;
+}
+
+#surprise_your_valentine #video:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#surprise_your_valentine #video #play_btn {
+  background-color: #FFFFFF;
+  height: 100px;
+  width: 100px;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  left: 223px;
+  bottom: 127px;
+}
+
+#surprise_your_valentine #video #play_btn #red_triangle {
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #f34f3f;
+}
+
+#surprise_your_valentine #surprise_your_valentine_summary {
+  max-width: 420px;
+}
+
+#surprise_your_valentine #surprise_your_valentine_summary h3, #surprise_your_valentine #surprise_your_valentine_summary span {
+  opacity: 0.9;
+  font-family: "Playfair Display";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2em;
+  letter-spacing: 0.5px;
+  color: #2b2b2b;
+}
+
+#surprise_your_valentine #surprise_your_valentine_summary span {
+  opacity: 1;
+  color: #f34f3f;
+}
+
+#surprise_your_valentine #surprise_your_valentine_summary p, #surprise_your_valentine #surprise_your_valentine_summary ul li {
+  font-family: Lora;
+  color: #6d6a6a;
+  line-height: 30px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+#surprise_your_valentine #surprise_your_valentine_summary ul {
+  list-style: none;
+}
+
+#surprise_your_valentine #surprise_your_valentine_summary ul li img {
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 1200px) {
+  #surprise_your_valentine {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #surprise_your_valentine #video {
+    height: 500px;
+    margin-bottom: 20px;
   }
 }
 /*# sourceMappingURL=main.css.map */
